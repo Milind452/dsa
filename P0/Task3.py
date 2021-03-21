@@ -3,12 +3,12 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files.
 """
 import csv
-
-with open('texts.csv', 'r') as f:
+import re
+with open('P0/texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
 
-with open('calls.csv', 'r') as f:
+with open('P0/calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
@@ -43,3 +43,71 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+def isFixedLine(number):
+  if number[0] == '(':
+    return True
+  return False
+
+def getAreaCode(number):
+  if not isFixedLine(number):
+    # print("Not a fixed line number")
+    return -1
+  code = re.findall(r'\(.*?\)', number)
+  return str(code)[3:-3]
+
+def isBangalore(number):
+  if getAreaCode(number) == '080':
+    return True
+  return False
+
+def isMobile(number):
+  mobilePrefix = ('7', '8', '9')
+  if number[0] in mobilePrefix:
+    return True
+  return False
+  
+def getMobilePrefix(number):
+  if not isMobile(number):
+    # print("Not a mobile number")
+    return -1
+  return number[:4]
+
+def isTelemarketer(number):
+  if number[0] == '1':
+    return True
+  return False
+  
+def getTelemarketerCode(number):
+  if not isTelemarketer(number):
+    # print("Not a telemarketer number")
+    return -1
+  return number[:3]
+
+codes = list()
+for call in calls:
+  if isBangalore(call[0]):
+    number = call[1]
+    code = ''
+    if isFixedLine(number):
+      code = getAreaCode(number)
+    elif isMobile(number):
+      code = getMobilePrefix(number)
+    elif isTelemarketer(number):
+      code = getTelemarketerCode
+    
+    if code not in codes:
+      codes.append(code)
+
+
+print("The numbers called by people in Bangalore have codes:")
+for code in sorted(codes):
+  print(code)
+
+caller = len(codes)
+receiver = 0
+for code in codes:
+  if code == '080':
+    receiver += 1
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore".format(receiver / caller * 100))
