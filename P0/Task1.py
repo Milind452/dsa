@@ -39,3 +39,6 @@ for text, call in zip(texts, calls):
         record[call[1]] += 1
 
 print("There are {} different telephone numbers in the records".format(len(record)))
+
+
+# Worst case Big O Notation: O(n)

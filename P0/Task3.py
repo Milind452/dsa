@@ -111,3 +111,6 @@ for code in codes:
     receiver += 1
 
 print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore".format(receiver / caller * 100))
+
+
+# Worst case Big O Notation: O(2n)

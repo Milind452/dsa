@@ -47,3 +47,6 @@ for call in calls:
 print("These numbers could be telemarketers:")
 for number in sorted(callSend):
     print(number)
+
+
+# Worst case Big O Notation: O(2)

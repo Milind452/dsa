@@ -30,3 +30,5 @@ for call in calls:
 
 print("{} spent the longest time, {} seconds, on the phone during September 2016".format(mNumber, m))
 
+
+# Worst case Big O Notation: O(n)
