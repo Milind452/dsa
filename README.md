@@ -1,6 +1,7 @@
 # Data Structures and Algorithms
 
 ## How to solve problems
+<hr>
 1. Understand the entire problem statement
 2. Find out the inputs
 3. Find out the outputs
@@ -11,6 +12,7 @@
 8. Don't try to optimize prematurely; get a working solution first and if required, build on that solution for more efficiency
 
 ## Big O Notation
+<hr>
 It's a notation used to quantify the efficiency of an algorithm
 
  `O(<expression with n>)`
@@ -32,3 +34,23 @@ def bar(n):
 			print(i)
 # O(n^2)
 ```
+
+## Data Structures
+<hr>
+Data structures are containers that organize and group data together in different ways
+
+### Arrays and Linked Lists
+<hr>
+
+> #### **Lists**
+> - Data structure with an order and no fixed length.
+> - Lists can store any type of data.
+> - They also do not have an index.
+> - They are not stored in continuous blocks of memory.
+> - NOTE: Python lists are slightly different. They are basically (dynamic) arrays with some high level language features.
+
+> #### **Arrays**
+> - Arrays are lists with an order and fixed length
+> - They have an index
+> - They are stored in continuous memory locations
+
