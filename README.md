@@ -1,7 +1,7 @@
 # Data Structures and Algorithms
 
 ## How to solve problems
-<hr>
+---
 1. Understand the entire problem statement
 2. Find out the inputs
 3. Find out the outputs
@@ -12,7 +12,7 @@
 8. Don't try to optimize prematurely; get a working solution first and if required, build on that solution for more efficiency
 
 ## Big O Notation
-<hr>
+---
 It's a notation used to quantify the efficiency of an algorithm
 
  `O(<expression with n>)`
@@ -36,11 +36,11 @@ def bar(n):
 ```
 
 ## Data Structures
-<hr>
+---
 Data structures are containers that organize and group data together in different ways
 
 ### Arrays and Linked Lists
-<hr>
+---
 
 > #### **Lists**
 > - Data structure with an order and no fixed length.
